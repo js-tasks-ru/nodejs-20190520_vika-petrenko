@@ -12,17 +12,17 @@ server.on('request', (req, res) => {
 
   switch (req.method) {
     case 'DELETE':
-        fs.unlink(filepath, (err) => {
-          if (err) {
-            if (err.code === 'ENOENT') {
-              res.statusCode = 404;
-              res.end('No such file');
-            }
-          } else {
-            res.statusCode = 200;
+      fs.unlink(filepath, (err) => {
+        if (err) {
+          if (err.code === 'ENOENT') {
+            res.statusCode = 404;
             res.end('No such file');
           }
-        });
+        } else {
+          res.statusCode = 200;
+          res.end('No such file');
+        }
+      });
 
       break;
 

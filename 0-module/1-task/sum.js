@@ -1,6 +1,6 @@
 function sum(a, b) {
   if (!parseFloat(a) || !parseFloat(b)) {
-      throw new TypeError('Arguments are not number');
+    throw new TypeError('Arguments are not number');
   }
   return a + b;
 }

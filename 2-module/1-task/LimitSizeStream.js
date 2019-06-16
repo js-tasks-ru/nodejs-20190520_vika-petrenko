@@ -5,10 +5,8 @@ class LimitSizeStream extends stream.Transform {
   constructor(options) {
     super(options);
     this.options = options;
+    this.string = '';
   }
-
-  string = '';
-  options = {};
 
   _transform(chunk, encoding, callback) {
     this.string += chunk.toString();
